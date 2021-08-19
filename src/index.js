@@ -1,3 +1,4 @@
+const { constants } = require('crypto');
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
@@ -5,7 +6,8 @@ const path = require('path');
 const app = express();
 
 // Db connection
-const { mongoose } = require('./database');
+const { mongoose } = require ('./drivers_databases/driver_mongoDB');
+const { mysql } = require ('./drivers_databases/driver_MySql');
 
 // Settings 
 app.set('port', process.env.PORT || 3000);
